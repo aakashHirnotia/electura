@@ -12,15 +12,13 @@ body{
 
   .modal-content{
     background-color: var(--black);}
-/******Common css start here***/
+
  ::-webkit-scrollbar {
      width: 5px;
 }
-/* Track */
  ::-webkit-scrollbar-track {
      background: var(--dark_grey);
 }
-/* Handle */
  ::-webkit-scrollbar-thumb {
      background: var(--light_grey);
      border-radius: 20px;

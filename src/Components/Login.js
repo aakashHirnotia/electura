@@ -11,7 +11,7 @@ const intialState = {
     emailError: "",
     password: "",
     passwordError: "",
-    status: false,
+    status: false, //to switch between login and signup form
     loginError: ""
   };
 
@@ -32,7 +32,7 @@ class Login extends Component {
     loginForm(){
         this.setState({status: false,usernameError: "",passwordError: "",emailError: "",loginError:"",username:"",password:"",email:""});
     }
-
+    //login form validation
     validateLogin = (error) => {
         let loginError = "";
         let passwordError = "";
@@ -46,9 +46,9 @@ class Login extends Component {
         else if(!EmailValidator.validate(this.state.email)) {
           emailError = "Invalid email";
         }  
-        if (error.code==="auth/user-not-found") {
+        if (error.code==="auth/wrong-password" || error.code==="auth/user-not-found") {
             loginError= "Invalid User ID or Password."
-        }    
+        }   
         if (
           passwordError ||
           emailError ||
@@ -63,6 +63,7 @@ class Login extends Component {
         }
         return true;
       };
+      //signup form validation
     validate = () => {
         let usernameError = "";
         let passwordError = "";
@@ -102,16 +103,13 @@ class Login extends Component {
     
     login(e){
         e.preventDefault();
-        // const isValid = this.validate();
-        // if(isValid){ 
-            fire.auth().signInWithEmailAndPassword(this.state.email,this.state.password).then((u) => {
-            }).catch((error) => {
-                if(!error.a){
-                    this.validateLogin(error);
-                    console.log(error);
-                }
-            });
-        // }
+        fire.auth().signInWithEmailAndPassword(this.state.email,this.state.password).then((u) => {
+        }).catch((error) => {
+            if(!error.a){
+                this.validateLogin(error);
+                console.log(error);
+            }
+        });
     }
 
     registerUser(e){
