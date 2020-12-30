@@ -1,38 +1,217 @@
-.App {
-  text-align: center;
+body{
+    font-family: 'Conv_AvenirLTStd-Roman';
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+:root {
+    --red1 : #D02127 ;
+    --grey : #575B56 ;
+    --black : #1B231B ;
+    --white : #F7F7F7;
+    --light_grey : #747A72;
+    --dark_grey : #333834 ;
   }
+
+  .modal-content{
+    background-color: var(--black);}
+/******Common css start here***/
+ ::-webkit-scrollbar {
+     width: 5px;
+}
+/* Track */
+ ::-webkit-scrollbar-track {
+     background: var(--dark_grey);
+}
+/* Handle */
+ ::-webkit-scrollbar-thumb {
+     background: var(--light_grey);
+     border-radius: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+button:focus{
+  outline: none;
+}
+input:focus{
+  outline: none;
+
+}
+.register{
+     padding : 0 20px auto 20px;
+     background-color: var(--black);
+     text-align: center;
+     z-index: 1;
+     box-shadow: 0 0 15px #000;
+     padding: 20px 30px;
+}
+ .registerOuter{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     height: 100%;
+}
+ .login_outer{
+    display: flex;
+     max-width: 600px;
+     margin: auto;
+     align-items: center;
+     justify-content: center;
+     height: 100%;
+}
+ .login-card{
+     box-shadow: 0 0 15px #000;
+     display: flex;
+     min-height: 575px;
+}
+ .login-box{
+     padding: 20px 30px;
+     min-width: 350px;
+     max-width: 350px;
+}
+ .login-statement{
+     color : var(--white);
+     margin: 30px 0 20px 0;
+     text-align: center;
+}
+ .login-statement3{
+     color : var(--red1);
+     font-size: 18px;
+     font-family: 'Conv_AvenirLTStd-Medium';
+     cursor: pointer;
+}
+ .orelement{
+     display: flex;
+     margin-top: 8px;
+     max-width: 290px;
+}
+ .hrline{
+     border-bottom:3px solid var(--red1);
+     height: 15px;
+     width: 140px;
+}
+ 
+ .login-submit{
+     background-color: var(--red1);
+     color : var(--white);
+     padding: 10px;
+     min-width: 150px;
+     border-radius: 5px;
+     outline: none;
+     border: none;
+     cursor: pointer;
+     margin: 70px;
+}
+ .login-statement2{
+     color: var(--white);
+     margin-top: 140px;
+     margin-bottom: 20px;
+}
+ .login-statement4{
+     color : var(--white);
+     font-size: 20px;
+     padding: 0 10px;
+}
+ .login-options{
+     margin-top: 20px;
+}
+ .icon2{
+     background-color: var(--white);
+     margin : 8px ;
+     font-size: 20px;
+     width: 40px;
+     height: 40px;
+     padding-top: 10px;
+     border-radius: 50%;
+     cursor: pointer;
+}
+ .fa-google.icon2{
+     color: #ed2d00;
+}
+ .fa-facebook.icon2{
+     color: #2d5599;
+}
+ .fa-twitter.icon2{
+     color: #00aaf4;
+}
+ .signup{
+     background-color: var(--dark_grey);
+     padding: 20px 30px;
+     text-align: center;
+}
+ .login-image{
+    margin-top: 30px;
+    max-width: 150px;
+}
+ .login, .register {
+     width: 400px;
+}
+ .login a {
+     text-align: center;
+}
+ textarea[type='text'] {
+     background-color: #e6e6e6;
+     color: #FF0000;
+     font-size: 16px;
+     margin-bottom: 20px;
+     border: none;
+     padding: 20px 30px;
+}
+ .register-element2{
+    font-size: 12px;
+     color:var(--light_grey);
+}
+ .register-element2 a{
+    color:var(--red1);
 }
 
-.App-link {
-  color: #61dafb;
+ #root, #root>div {
+    height: 100%;
+     width: 100%;
+}
+ html,body {
+     width: 100%;
+     height: 100%;
+     margin: 0px;
+     padding: 0px;
+     background-color: #1B231B;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+ * {
+     box-sizing: border-box;
+}
+ .MuiInputBase-input{
+     color: var(--light_grey) !important;
+}
+ .MuiFormLabel-root {
+     color: rgb(116, 122, 114) !important;
+}
+ .MuiFormLabel-root.Mui-focused{
+     color:#3d9aa2 !important ;
+}
+ .MuiInput-underline:before{
+     border-bottom: 2px solid rgba(116, 122, 114, 1) !important;
+}
+ .MuiInput-underline:after{
+     border-bottom: 2px solid #3d9aa2 !important;
+}
+ .MuiFormControl-root{
+     width: 100%;
+}
+ .login-options .fa{
+    transition-duration: 0.5s;
+}
+ .login-options .fa-facebook {
+     background: #3B5998;
+     color: white;
+}
+ .login-options .fa-twitter {
+     background: #55ACEE;
+     color: white;
+}
+ .login-options .fa-google {
+     background: #dd4b39;
+     color: white;
+}
+ .login-options .fa:hover {
+     color: white;
+     transform: scale(1.2);
+     text-decoration: none;
 }
